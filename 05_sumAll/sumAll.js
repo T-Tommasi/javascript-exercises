@@ -1,7 +1,19 @@
 const sumAll = function(startNumber,finalNumber) {
     let total = 0;
-    for (i = 0; i < finalNumber; i++) {
-        total += startNumber+i
+    if (startNumber < 0 || finalNumber < 0) {
+        return 'ERROR'
+    } else if (typeof startNumber != Number || typeof finalNumber != Number) {
+        return 'ERROR'
+    } else {
+        if (startNumber > finalNumber) {
+            for (i = 0; total < startNumber; i++) {
+                total += finalNumber+i;
+            }
+        } else {
+            for (i = 0; total < finalNumber; i++) {
+                total += startNumber+i;
+            }
+        }
     }
     return total
 }
